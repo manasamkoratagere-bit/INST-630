@@ -432,3 +432,45 @@ body {
 body > div:last-child {
     display: none;
 }
+
+@media (max-width: 768px) {
+
+    .recipe-container {
+        padding: 25px 20px;   /* was: 55px 65px — too wide for a phone */
+    }
+
+    .recipe-title {
+        font-size: 28px;      /* was: 56px — was overflowing the box */
+        min-height: auto;
+        padding: 14px 16px;
+        border-width: 12px;   /* was: 24px — scales the border down too */
+    }
+
+    .recipe-image {
+        position: static;     /* was: absolute — was flying off to the side */
+        width: 200px;
+        top: auto;
+        right: auto;
+        margin: 20px auto 0;
+        z-index: auto;
+    }
+
+    .recipe-meta {
+        flex-wrap: wrap;       /* was: nowrap — was forcing horizontal scroll */
+        justify-content: center;
+        gap: 10px 14px;
+    }
+
+    .meta-item {
+        padding-right: 12px;
+    }
+
+    .recipe-description p {
+        max-width: 100%;
+        padding: 0 4px;
+    }
+
+    html {
+        font-size: 16px;      /* was: 18-20px — scales all your rem-based text down */
+    }
+}
