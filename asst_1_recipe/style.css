@@ -1,0 +1,434 @@
+/* INTENTIONALLY UGLY STARTER STYLES */
+/* These styles are very, very ugly. */
+/* Time to make them attractive, legible, and usable */
+
+/*FONTS*/
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+
+/*COLOR PALETTE */
+
+:root {
+    --cream: #f0e5d0;
+    --deep-purple: #321c2c;
+    --purple: #4b2e4d;
+    --lavender: #7b6485;
+    --sage: #5a6147;
+    --gold: #c8a85a;
+    --dark-blue: #182a3b;
+    --soft-blue: #8295a8;
+}
+
+
+/*BASIC RESET IDK GOOGLE SAID ADD THIS*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    /*Top Stars that AREN'T WORKING UGHHH*/
+    {
+        width: 199px;
+        height: 65px;
+
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" width="199" height="65" viewBox="0 0 199 65" fill="none">
+        <path d="M100 0L107.858 22.4569H133.287L112.714 36.3361L120.572 58.7931L100 44.9139L79.4275 58.7931L87.2855 36.3361L66.713 22.4569H92.142L100 0Z" fill="#F2E5CE"/>
+        <path d="M164 0L171.858 22.4569H197.287L176.714 36.3361L184.572 58.7931L164 44.9139L143.428 58.7931L151.286 36.3361L130.713 22.4569H156.142L164 0Z" fill="#F2E5CE"/>
+        <path d="M35 0L42.858 22.4569H68.287L47.7145 36.3361L55.5725 58.7931L35 44.9139L14.4275 58.7931L22.2855 36.3361L1.71302 22.4569H27.142L35 0Z" fill="#F2E5CE"/>
+        </svg>
+    }
+    /* MY UPLOADED BG IMAGE FROM PINTEREST*/
+    background-image:
+        linear-gradient(
+            rgba(24, 42, 59, 0.15),
+            rgba(24, 42, 59, 0.15)
+        ),
+        url("BG IMAGE FOR WEBSITE.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: var(--deep-purple);
+
+    font-family: "EB Garamond", serif;
+
+    padding: 40px 20px;
+    
+}
+
+
+/* MAIN RECIPE CARD*/
+
+.recipe-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+        "header"
+        "meta"
+        "description"
+        "ingredients"
+        "instructions"
+        "footer";
+
+    row-gap: 40px;
+    width: min(100%, 1400px);
+    margin: 0 auto;
+
+    background: var(--cream);
+    border: 2px solid var(--gold);
+    border-radius: 28px;
+
+    padding: 55px 65px;
+
+    position: relative;
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+/* Decorative gold line around the card */
+
+
+/* HEADER */
+
+.recipe-header {
+    grid-area: header;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    text-align: center;
+
+    border-bottom: 1px solid rgba(75, 46, 77, 0.35);
+
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+
+
+/* title */
+
+.recipe-title {
+    width: 100%;
+    max-width: 1246px;
+    height: auto;
+    min-height: 110px;
+
+    padding: 20px 30px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    color: #F2E5CE;
+    background: #3C2139;
+
+    border: 24px solid #F2E5CE;
+    border-radius: 48px;
+
+    font-family: "MedievalSharp";
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/*image*/
+
+.recipe-image {
+    position: absolute;
+
+    width: 800px;
+    height: auto;
+
+    top: 480px;
+    right: 150px;
+
+    display: block;
+
+    object-fit: contain;
+
+    z-index: 10;
+}
+
+
+/* DESCRIPTION*/
+
+.recipe-description {
+    grid-area: description;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: var(--deep-purple);
+
+    font-family: "EB Garamond", serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+.recipe-description p {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* meta info*/
+
+.recipe-meta {
+
+    grid-area: meta;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 8px 18px;
+}
+
+
+.meta-item {
+    padding-right: 18px;
+
+    border-right: 1px solid rgba(75, 46, 77, 0.35);
+}
+
+.meta-item:last-child {
+    border-right: none;
+}
+
+.meta-item strong {
+    color: var(--purple);
+    margin-right: 6px;
+}
+
+
+/* INGREDIENTS AND STUFF */
+
+.ingredients-section {
+    grid-area: ingredients;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-top: 0px;
+}
+
+.instructions-section {
+    grid-area: instructions;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 80px;
+}
+
+
+/* Section headings */
+
+.ingredients-section h2,
+.instructions-section h2 {
+    color: var(--purple);
+
+    font-family: "MedievalSharp", serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0px;
+}
+
+
+.ingredients-section h2::before,
+.instructions-section h2::before {
+    content: "✦";
+
+    color: var(--gold);
+
+    font-size: 1rem;
+}
+
+
+/* INGREDIENTS */
+
+.ingredients-list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding-left: 5px;
+}
+
+
+.ingredients-list li {
+    position: relative;
+
+    padding-left: 20px;
+
+    color: var(--deep-purple);
+
+    font-family: "EB Garamond", serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+}
+
+
+.ingredients-list li::before {
+    content: "✧";
+
+    position: absolute;
+
+    left: 0;
+
+    color: var(--gold);
+
+    font-size: 0.9rem;
+}
+
+
+/* INSTRUCTIONS */
+
+.instructions-list {
+    list-style: none;
+
+    counter-reset: recipe-step;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.instruction-step {
+    counter-increment: recipe-step;
+    position: relative;
+    padding-left: 45px;
+    color: var(--deep-purple);
+    font-family: "EB Garamond", serif;
+    font-size: 0.95 rem;
+    line-height: 1.65;
+}
+
+
+/* Number circles */
+
+.instruction-step::before {
+    content: counter(recipe-step);
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    color: var(--purple);
+
+    font-family: "EB Garamond", serif;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+}
+
+
+.instruction-step strong {
+    color: var(--purple);
+
+    font-family: "EB Garamond", serif;
+}
+
+
+/*FOOTER*/
+
+.recipe-footer {
+    grid-area: footer;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(75, 46, 77, 0.35);
+    text-align: center;
+    color: var(--lavender);
+    font-family: "EB Garamond", serif;
+    font-size: 0.58rem;
+    line-height: 1.7;
+}
+
+
+.recipe-footer p + p {
+    margin-top: 5px;
+}
+
+
+
+body > div:last-child {
+    display: none;
+}
