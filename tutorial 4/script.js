@@ -152,6 +152,9 @@ const updateConfirmation = () => {
 nameInput.addEventListener('input', () => {
 
   if (isGoing) {
+    if (nameInput.value.trim() === '') {
+      guestInput.value = '0';
+    }
     updateConfirmation();
   } else if (isNotGoing) {
     regret.textContent = `Oh no! Swing by next time!`;
