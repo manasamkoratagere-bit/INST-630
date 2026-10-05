@@ -1,0 +1,254 @@
+/* =====================================================
+   TUTORIAL 5: ARRAY METHODS FOR DATA
+   Consistent styling with previous tutorials
+   ===================================================== */
+
+/* ROOT VARIABLES */
+:root {
+    --primary-color: #0b4d2c;       /* deep green */
+    --text-color: #0b4d2c;          /* deep green */
+    --background-color: #ffe0ea;    /* light pink */
+    --card-background: #fff2f6;     /* lighter pink */
+    --border-color: #e8b4c4;
+    --shadow: 0 0.125rem 0.25rem rgba(11, 77, 44, 0.15);
+    --border-radius: 0.5rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: var(--spacing-md);
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+header p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.method-section {
+    background: var(--card-background);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 0.25rem solid var(--primary-color);
+}
+
+.method-section h2 {
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+.method-section p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-color);
+}
+
+code {
+    background: var(--background-color);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+.demo-area {
+    background: var(--background-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--border-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.method-button {
+    background: var(--primary-color);
+    color: var(--card-background);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    display: block;
+    margin-bottom: var(--spacing-md);
+}
+
+.method-button:hover {
+    background: #08371f;
+    transform: translateY(-1px);
+}
+
+.method-button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.result-area {
+    background: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    min-height: 6rem;
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+.placeholder {
+    font-style: italic;
+    text-align: center;
+    margin: var(--spacing-md) 0;
+    opacity: 0.7;
+}
+
+.restaurant-item {
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.restaurant-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.restaurant-name {
+    font-weight: bold;
+}
+
+.restaurant-cuisine {
+    font-size: 0.9rem;
+}
+
+.restaurant-rating {
+    font-weight: bold;
+}
+
+.restaurant-price {
+    color: var(--text-color);          
+    background: var(--background-color);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.name-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.name-list li {
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.name-list li:hover {
+    background: var(--background-color);
+}
+
+.name-list li:last-child {
+    border-bottom: none;
+}
+
+.found-restaurant {
+    background: var(--primary-color);
+    color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.found-restaurant .restaurant-name {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.explanation {
+    background: var(--background-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 0.25rem solid var(--primary-color);
+}
+
+.explanation p {
+    margin: 0;
+    font-style: italic;
+}
+
+.tutorial-instructions {
+    background: var(--card-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 0.25rem solid var(--primary-color);
+}
+
+.tutorial-instructions h2 {
+    margin-top: 0;
+}
+
+.tutorial-instructions h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.tutorial-instructions ol li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.tutorial-instructions ul li {
+    margin-bottom: 0.25rem;
+}
+
+@media (max-width: 48rem) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    .method-section {
+        padding: var(--spacing-md);
+    }
+
+    .demo-area {
+        padding: var(--spacing-md);
+    }
+
+    .result-area {
+        max-height: 15rem;
+    }
+}
