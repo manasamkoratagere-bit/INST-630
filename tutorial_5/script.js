@@ -1,9 +1,3 @@
-// ============================================
-// TUTORIAL 5: ARRAY METHODS FOR DATA
-// From ONE element to MANY elements
-// ============================================
-
-// Restaurant data - this is what we'll work with
 const restaurants = [
     {
         id: 1,
@@ -127,9 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const filteredList = document.querySelector('#filtered-list');
 
     filterButton.addEventListener('click', () => {
-        const cheapRestaurants = restaurants.filter((restaurant) =>
-            restaurant.priceRange === '$' || restaurant.priceRange === '$$'
-        );
+        const cheapRestaurants = restaurants.filter((restaurant) => {
+            return restaurant.priceRange === '$' || restaurant.priceRange === '$$';
+        });
 
         filteredList.innerHTML = '';
 
@@ -152,7 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mappedList = document.querySelector('#mapped-list');
 
     mapButton.addEventListener('click', () => {
-        const names = restaurants.map((restaurant) => restaurant.name);
+        const names = restaurants.map((restaurant) => {
+            return restaurant.name;
+        });
 
         mappedList.innerHTML = `
             <ul class="name-list">
@@ -169,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const foundItem = document.querySelector('#found-item');
 
     findButton.addEventListener('click', () => {
-        const bestRestaurant = restaurants.find((restaurant) => restaurant.rating === 4.8);
+        const bestRestaurant = restaurants.find((restaurant) => {
+            return restaurant.rating === 4.8;
+        });
 
         if (bestRestaurant) {
             foundItem.innerHTML = `
