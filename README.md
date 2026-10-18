@@ -10,3 +10,5 @@ Make an Ugly Page cute : https://manasamkoratagere-bit.github.io/INST-630/asst_1
 Tutorial 4: https://manasamkoratagere-bit.github.io/INST-630/tutorial%204/
 
 Tutorial 5: https://manasamkoratagere-bit.github.io/INST-630/tutorial_5
+
+Tutorial 6: https://manasamkoratagere-bit.github.io/INST-630/tutorial_6
