@@ -1,7 +1,7 @@
 /**
  * CHARTS VIEW
  * For: someone who wants the big picture at a glance.
- *   Chart 1 (bar): which types of business were inspected most
+ *   Chart 1 (bar): which types of business were inspected most (top 8)
  *   Chart 2 (doughnut): how inspections turned out
  */
 
@@ -24,23 +24,20 @@ function sortedEntries(counts) {
   return Object.entries(counts).sort((a, b) => b[1] - a[1]);
 }
 
-// Chart 1 data: top 8 business types, everything else added up as "All other types"
+// Chart 1 data: the 8 most inspected types of business
 function getCategoryData(data) {
-  const entries = sortedEntries(countBy(data, 'category'));
-  const top = entries.slice(0, 8);
-  const otherTotal = entries.slice(8).reduce((sum, entry) => sum + entry[1], 0);
-  if (otherTotal > 0) {
-    top.push(['All other types', otherTotal]);
-  }
-  return top;
+  return sortedEntries(countBy(data, 'category')).slice(0, 8);
 }
 
 function showCharts(data) {
   const categoryEntries = getCategoryData(data);
-  const resultEntries = sortedEntries(countBy(data, 'inspection_results'));
+  const resultCounts = countBy(data, 'inspection_results');
+  const resultEntries = sortedEntries(resultCounts);
 
   const topCategory = categoryEntries[0];
-  const topResult = resultEntries[0];
+  // Most common result that is actually listed (skip "Not listed")
+  const topResult = resultEntries.find((entry) => entry[0] !== 'Not listed');
+  const notListedCount = resultCounts['Not listed'] || 0;
 
   /*html*/
   return `
@@ -48,16 +45,17 @@ function showCharts(data) {
     <p class="view-description">Patterns in the data at a glance</p>
     <div class="charts-grid">
       <figure class="chart-figure">
-        <canvas id="chart-one"></canvas>
+        <canvas id="chart-one" role="img" aria-label="Bar chart of inspections by type of business"></canvas>
         <figcaption class="chart-summary">
           ${topCategory[0]} had the most inspections: ${topCategory[1]} of ${data.length}.
           The chart shows the 8 most inspected types of business.
         </figcaption>
       </figure>
       <figure class="chart-figure">
-        <canvas id="chart-two"></canvas>
+        <canvas id="chart-two" role="img" aria-label="Doughnut chart of inspection results"></canvas>
         <figcaption class="chart-summary">
-          The most common inspection result was "${topResult[0]}": ${topResult[1]} of ${data.length} inspections.
+          Among listed results, "${topResult[0]}" was the most common: ${topResult[1]} of ${data.length} inspections.
+          ${notListedCount} inspections have no result listed.
         </figcaption>
       </figure>
     </div>
@@ -92,7 +90,7 @@ function drawCharts(data) {
     options: {
       indexAxis: 'y', // horizontal bars so long names stay readable
       plugins: {
-        title: { display: true, text: 'Inspections by type of business' },
+        title: { display: true, text: 'Inspections by type of business (top 8)' },
         legend: { display: false },
       },
       scales: {
