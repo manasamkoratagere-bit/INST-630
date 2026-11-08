@@ -5,7 +5,7 @@ Tutorial 1 : https://manasamkoratagere-bit.github.io/INST-630/tutorial_1
 
 Tutorial 2 : https://manasamkoratagere-bit.github.io/INST-630/tutorial_2
 
-Make an Ugly Page cute : https://manasamkoratagere-bit.github.io/INST-630/asst_1_recipe/
+Project 1 - Make an Ugly Page cute : https://manasamkoratagere-bit.github.io/INST-630/asst_1_recipe/
 
 Tutorial 4: https://manasamkoratagere-bit.github.io/INST-630/tutorial%204/
 
@@ -14,3 +14,5 @@ Tutorial 5: https://manasamkoratagere-bit.github.io/INST-630/tutorial_5
 Tutorial 6: https://manasamkoratagere-bit.github.io/INST-630/tutorial_6
 
 Tutorial 7: https://manasamkoratagere-bit.github.io/INST-630/tutorial_7/
+
+Project 2 - One Set, Four Views: https://manasamkoratagere-bit.github.io/INST-630/project_2/
